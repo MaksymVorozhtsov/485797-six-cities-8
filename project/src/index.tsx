@@ -4,6 +4,6 @@ import App from './components/app/app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App numberOfPlaces='312' />
   </React.StrictMode>,
   document.getElementById('root'));
