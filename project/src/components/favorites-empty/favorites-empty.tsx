@@ -4,7 +4,7 @@ import Footer from '../UI/footer';
 function FavoritiesEmpty(): JSX.Element {
   return (
     <div className="page page--favorites-empty">
-      
+
       <Header />
 
       <main className="page__main page__main--favorites page__main--favorites-empty">

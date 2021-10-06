@@ -4,7 +4,7 @@ import Footer from '../UI/footer';
 function Favorities(): JSX.Element {
   return (
     <div className="page">
-      
+
       <Header />
 
       <main className="page__main page__main--favorites">
