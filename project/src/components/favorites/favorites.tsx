@@ -1,7 +1,7 @@
 import Header from '../UI/header';
 import Footer from '../UI/footer';
 
-function Favorities(): JSX.Element {
+function Favorites(): JSX.Element {
   return (
     <div className="page">
 
@@ -140,4 +140,4 @@ function Favorities(): JSX.Element {
   );
 }
 
-export default Favorities;
+export default Favorites;
