@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../UI/header';
 import Tabs from '../UI/tabs';
 
@@ -18,7 +19,7 @@ function Error404(): JSX.Element {
               <div className="cities__places-list places__list tabs__content">
 
                 <h2>This is 404 page</h2>
-                <p>so the requested page not exist, sorry, but please go to <a href="/">main page</a></p>
+                <p>so the requested page not exist, sorry, but please go to <Link to="/">main page</Link></p>
 
               </div>
             </section>
