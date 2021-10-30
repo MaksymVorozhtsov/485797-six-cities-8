@@ -19,6 +19,6 @@ export type PropertyType = {
   agd: string[];
   host: roomHost;
   description: string;
-  reviews: object[];
+  reviews: Record<string, string>[];
   gallery: string[];
 };
