@@ -6,13 +6,19 @@ import Login from '../login/login';
 import Main from '../main/main';
 import Property from '../property/property';
 import PrivateRoute from '../private-routes/private-routes';
+import {PropertyType} from '../../types/offers';
 
-function App(props: {numberOfPlaces: string}): JSX.Element {
+type MainScreenProps = {
+  numberOfPlaces: string;
+  offers: PropertyType[];
+}
+
+function App({numberOfPlaces, offers}: MainScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path={AppRoute.Main}>
-          <Main numberOfPlaces = {props.numberOfPlaces}/>
+          <Main numberOfPlaces = {numberOfPlaces} offers = {offers} />
         </Route>
         <Route exact path={AppRoute.SignIn}>
           <Login />
@@ -20,7 +26,7 @@ function App(props: {numberOfPlaces: string}): JSX.Element {
         <PrivateRoute
           exact
           path={AppRoute.Favorites}
-          render={() => <Favorites />}
+          render={() => <Favorites offers = {offers}/>}
           authorizationStatus={AuthorizationStatus.NoAuth}
         >
         </PrivateRoute>

@@ -1,11 +1,17 @@
 import Header from '../UI/header';
 import Tabs from '../UI/tabs';
-import Card from '../card/card';
+import PropertyList from '../property-list/property-list';
+import {PropertyType} from '../../types/offers';
 
-function Main(props: {numberOfPlaces: string}): JSX.Element {
+type MainScreenProps = {
+  numberOfPlaces: string;
+  offers: PropertyType[];
+}
+
+function Main({numberOfPlaces, offers}: MainScreenProps): JSX.Element {
+
   return (
     <div className="page page--gray page--main">
-
       <Header />
 
       <main className="page__main page__main--index">
@@ -17,7 +23,7 @@ function Main(props: {numberOfPlaces: string}): JSX.Element {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{props.numberOfPlaces} places to stay in Amsterdam</b>
+              <b className="places__found">{numberOfPlaces} places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -34,11 +40,8 @@ function Main(props: {numberOfPlaces: string}): JSX.Element {
                 </ul>
               </form>
 
-              <div className="cities__places-list places__list tabs__content">
+              <PropertyList offers = {offers} />
 
-                <Card />
-
-              </div>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
