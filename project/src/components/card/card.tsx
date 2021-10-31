@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 type CardScreenProps = {
   cardData: PropertyType;
   onMouseEnter: any;
+  onMouseLeave: any;
 }
 
-function Card({cardData, onMouseEnter}: CardScreenProps): JSX.Element {
+function Card({cardData, onMouseEnter, onMouseLeave}: CardScreenProps): JSX.Element {
   return (
     <article className="cities__place-card place-card" data-id={cardData.id}>
       <div className="place-card__mark">

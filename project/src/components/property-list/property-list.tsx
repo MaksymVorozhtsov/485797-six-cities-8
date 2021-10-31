@@ -7,10 +7,14 @@ type PropertyListScreenProps = {
 }
 
 function PropertyList({offers}: PropertyListScreenProps): JSX.Element {
-  const [, setActiveCard] = useState();
+  const [, setActiveCard] = useState('');
 
-  const hoverCard = (e: any) => {
+  const hoverActiveCard = (e: any) => {
     setActiveCard(e.target);
+  };
+
+  const hoverInactiveCard = (e: any) => {
+    setActiveCard('');
   };
 
   return (
@@ -18,7 +22,7 @@ function PropertyList({offers}: PropertyListScreenProps): JSX.Element {
       {offers.map((offer, id) => {
         const keyValue = `${id}`;
         return (
-          <Card key = {keyValue} cardData = {offer} onMouseEnter = {hoverCard}/>
+          <Card key = {keyValue} cardData = {offer} onMouseEnter = {hoverActiveCard} onMouseLeave = {hoverInactiveCard}/>
         );
       })}
 
