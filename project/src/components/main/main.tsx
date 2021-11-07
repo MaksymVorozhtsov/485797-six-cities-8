@@ -1,7 +1,11 @@
 import Header from '../UI/header';
 import Tabs from '../UI/tabs';
 import PropertyList from '../property-list/property-list';
+import Map from '../map/map';
 import {PropertyType} from '../../types/offers';
+import {CITY} from '../../mocks/cities';
+import {POINTS} from '../../mocks/dots';
+
 
 type MainScreenProps = {
   numberOfPlaces: string;
@@ -43,9 +47,7 @@ function Main({numberOfPlaces, offers}: MainScreenProps): JSX.Element {
               <PropertyList offers = {offers} />
 
             </section>
-            <div className="cities__right-section">
-              <section className="cities__map map"></section>
-            </div>
+            <Map city = {CITY} points={POINTS} />
           </div>
         </div>
       </main>
